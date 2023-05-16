@@ -1,6 +1,7 @@
 package com.productservice.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -26,6 +27,11 @@ public class ProductServiceImpl implements ProductServie{
 	@Override
 	public List<Product> findAllProducts() {
 		return productDao.findAll();
+	}
+	
+	@Override
+	public List<Product> findProductsByUserId(Long userId) {
+		return productDao.findProductsByUserId(userId);
 	}
 
 }
